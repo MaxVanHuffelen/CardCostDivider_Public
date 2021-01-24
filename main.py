@@ -1,10 +1,11 @@
 #IMPORTS
+#No imports are needed? Welp, that's a first...
 
 #Define Collections
-	#Tuples containing the names of all vendors and buyers, respectively.
+ #Tuples containing the names of all vendors and buyers, respectively.
 listVendors = ('Vendor1', 'Vendor2', 'Vendor3', 'Vendor4', 'Vendor5', 'Vendor6', 'Vendor7', 'Vendor8', 'Vendor9', 'Vendor10', 'Vendor11', 'Vendor12', 'Vendor13', 'Vendor14', 'Vendor15', 'Vendor16', 'Vendor17', 'Vendor18')
 listBuyers = ('Buyer1', 'Buyer2', 'Buyer3')
-	#These are dictionaries containing all the vendors, cards and buyers, respectively. The indices are strings of the names of vendors/cards/buyers. Values are (pointers to) the relevant object.
+ #These are dictionaries containing all the vendors, cards and buyers, respectively. The indices are strings of the names of vendors/cards/buyers. Values are (pointers to) the relevant object.
 allVendorsDict = dict()
 allCards = dict()
 allBuyersDict = dict()
@@ -64,6 +65,7 @@ class Buyer:
 	def __str__(self):
 		return f'Expenses of {self.name}: Cards: {round(self.spentCards,2)}, Shipping: {round(self.spentShipping,2)}'
 
+#Define Functions
 def price2float(price):
 	'''
 	A simple function to transform a string of a price to a float of that price
@@ -217,6 +219,8 @@ def printExpenses(totalCardExpenses, totalShippingExpenses):
 	for buyerName in allBuyersDict:
 		print(allBuyersDict[buyerName])
 	print(f'The combined expenses are:\nCards: {totalCardExpenses}\nShipping: {totalShippingExpenses}\nAlltogether:{round(totalCardExpenses+totalShippingExpenses, 2)}')
+
+#Actually run stuff
 if __name__ == '__main__':
 
 	totalCardCost, totalShippingCost = createBuyersVendors()
